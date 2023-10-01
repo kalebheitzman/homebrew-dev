@@ -7,3 +7,17 @@ But... there's also something to be said about using Homebrew for my development
 ## Basic wants, processes, and procedures
 
 I like to put everything in `~/Developer` so I can easily get to everything in one spot.
+
+```bash
+mkdir ~/Developer
+```
+
+## Installing Brew and some basic development tools
+
+Homebrew, the missing [package manager](https://brew.sh/) for macOS (or linux).
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+This will install everything to `/opt/homebrew` including things like nginx/postgres configuration.

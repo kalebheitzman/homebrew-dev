@@ -27,11 +27,22 @@ Homebrew, the missing [package manager](https://brew.sh/) for macOS (or linux).
 
 This will install everything to the prefix `/opt/homebrew` including things like nginx/postgres configuration. On a typical Ubuntu sytem, you'll find nginx configuration at `/etc/nginx`. That same path becomes `/opt/homebrew/etc/nginx` on macOS.
 
-**Brew basics**
+**Initial Dev Environment setup**
+
+Watch for any help messages you need to be aware of during install.
 
 ```zsh
-brew doctor
-brew outdated
-brew update
-brew upgrade
+brew install git dnsmasq
+```
+
+I use git heavily for development and dnsmasq to setup an automatic `.mbp` domain ending for development purposes.
+
+Open `/opt/homebrew/etc/dnsmasq.conf` and add something similar to the address area. I'm using the a `.mbp` domain to indicate I'm developing on my macbook pro but you can change this to anything you like. Avoid choosing a TLD (top-level domain) suffix unless you know what you're doing like `.local`.
+
+```conf
+# Add domains which you want to force to an IP address here.
+# The example below send any host in double-click.net to a local
+# web-server.
+#address=/double-click.net/127.0.0.1
+address=/.mbp/127.0.0.1
 ```

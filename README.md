@@ -40,7 +40,7 @@ mkcert wordpress.local "*.wordpress.local"
 sudo nano /etc/hosts
 ```
 
-![hosts](images/hosts.png)
+![hosts](images/hosts-etc.png)
 
 ### Basic LEMP environment setup
 

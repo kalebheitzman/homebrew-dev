@@ -65,6 +65,29 @@ One of the domains I've mapped to my `/etc/hosts` file is `macos.dev`
 127.0.0.1       macos.dev
 ```
 
+I updated the ssl block in `/opt/homebrew/etc/nginx.conf` to reflect a development certificate. This process can repeated for each configuration file under `/opt/homebrew/etc/servers/`.
+
+```conf
+server {
+    listen       8443 ssl;
+    server_name  macos.dev;
+
+    ssl_certificate      /Users/kalebheitzman/Developer/macos.dev+4.pem;
+    ssl_certificate_key  /Users/kalebheitzman/Developer/macos.dev+4-key.pem;
+
+    ssl_session_cache    shared:SSL:1m;
+    ssl_session_timeout  5m;
+
+    ssl_ciphers  HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers  on;
+
+    location / {
+        root   html;
+        index  index.html index.htm;
+    }
+}
+```
+
 ```zsh
 nano /opt/homebrew/etc/httpd/httpd.conf
 

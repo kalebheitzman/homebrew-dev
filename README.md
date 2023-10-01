@@ -29,7 +29,18 @@ This will install everything to the prefix `/opt/homebrew` including things like
 
 ## Using mkcert to generate local development certificates
 
-I use `mkcert` to generate local development certicates and add entries to `/etc/hosts` to map domains to nginx. You can setup `dnsmasq` to resolve a domain suffix of your choice but I have avoided this because there have been issues with people masqing entire TLDs like `.local` and `.dev` and messing up thier networks.
+I use `mkcert` to generate local development certicates and add entries to `/etc/hosts` to map domains to nginx. You can setup `dnsmasq` to resolve a domain suffix of your choice but I have avoided this because there have been issues with people masking entire TLDs like `.local` and `.dev` and messing up thier networks and access to websites. I personally like using `.dev` mapped to my hosts file but I avoid using domains that map to real world domains like [wordpress.dev](https://wordpress.dev).
+
+```zsh
+brew install mkcert
+mkcert wordpress.local "*.wordpress.local"
+```
+
+```zsh
+sudo nano /etc/hosts
+```
+
+![hosts](images/hosts.png)
 
 ### Basic LEMP environment setup
 

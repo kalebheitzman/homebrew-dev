@@ -9,6 +9,7 @@ But... there's also something to be said about using Homebrew for my development
 - Brew for installing packages like nginx, php, and mariadb
 - A centralized code folder
 - mkcert for locally-trusted development certificates
+- Easy to start and stop daemonized services
 
 Brew gives me all of the tools on macOS that I would expect when setting up a production server on Ubuntu. All code goes into `~/Developer` so I can easily get to everything in one spot. AND... I use `mkcert` to generate certificates that I can use locally by wiring them up in nginx. Being able to test https locally is essential.
 
@@ -25,3 +26,12 @@ Homebrew, the missing [package manager](https://brew.sh/) for macOS (or linux).
 ```
 
 This will install everything to the prefix `/opt/homebrew` including things like nginx/postgres configuration. On a typical Ubuntu sytem, you'll find nginx configuration at `/etc/nginx`. That same path becomes `/opt/homebrew/etc/nginx` on macOS.
+
+**Brew basics**
+
+```zsh
+brew doctor
+brew outdated
+brew update
+brew upgrade
+```

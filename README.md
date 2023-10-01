@@ -29,10 +29,10 @@ This will install everything to the prefix `/opt/homebrew` including things like
 
 **Initial Dev Environment setup**
 
-Watch for any help messages you need to be aware of during install.
+Watch for any help messages you need to be aware of during install. These are the very basics for a LEMP environment using latest packages along with git for code repository management.
 
 ```zsh
-brew install git dnsmasq
+brew install git mkcert dnsmasq nginx mariadb php
 ```
 
 I use git heavily for development and dnsmasq to setup an automatic `.mbp` domain ending for development purposes.

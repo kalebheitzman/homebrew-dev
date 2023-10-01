@@ -65,6 +65,12 @@ One of the domains I've mapped to my `/etc/hosts` file is `macos.dev`
 127.0.0.1       macos.dev
 ```
 
+After generating the certificate in `~/Developer` ...
+
+```zsh
+mkcert macos.dev "*.macos.dev" localhost 127.0.0.1 ::1
+```
+
 I updated the ssl block in `/opt/homebrew/etc/nginx.conf` to reflect a development certificate. This process can repeated for each configuration file under `/opt/homebrew/etc/servers/`.
 
 ```conf
@@ -87,6 +93,8 @@ server {
     }
 }
 ```
+
+### Running Apache alongside Nginx
 
 ```zsh
 nano /opt/homebrew/etc/httpd/httpd.conf

@@ -33,7 +33,7 @@ I use `mkcert` to generate local development certicates and add entries to `/etc
 
 ```zsh
 brew install mkcert
-mkcert website.local "*.website.local"
+mkcert macos.dev "*.macos.dev" localhost 127.0.0.1 ::1
 ```
 
 ```zsh
@@ -57,7 +57,13 @@ brew services start php
 
 The port for the homebrew nginx formula has been set to 8080 so you don't have to use sudo to start the services. You can access the clean Nginx start page at [localhost:8080](http://localhost:8080).
 
-I use port **8080** and **8443** on Nginx and when I'm running Apache alongside Nginx, I map Appache to **9080** and **9443**. You'll need to edit your Apache startup configuration to Listen on 9080 in order to run Nginx and Apache side-by-side.
+I use port **8080** (http) and **8443** (https) on Nginx and when I'm running Apache alongside Nginx, I map Appache to **9080** and **9443**. You'll need to edit your Apache startup configuration to Listen on 9080 in order to run Nginx and Apache side-by-side.
+
+One of the domains I've mapped to my `/etc/hosts` file is `macos.dev`
+
+```zsh
+127.0.0.1       macos.dev
+```
 
 ```zsh
 nano /opt/homebrew/etc/httpd/httpd.conf

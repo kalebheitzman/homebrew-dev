@@ -12,6 +12,10 @@ But... there's also something to be said about using Homebrew for my development
 
 Brew gives me all of the tools on macOS that I would expect when setting up a production server on Ubuntu. All code goes into `~/Developer` so I can easily get to everything in one spot. AND... I use `mkcert` to generate certificates that I can use locally by wiring them up in nginx. Being able to test https locally is essential.
 
+Dead simple daemon control comes with `brew services` so I can launch web services and shut them down at will.
+
+![brew services](images/brew-services.png)
+
 ## Installing Brew and some basic development tools
 
 Homebrew, the missing [package manager](https://brew.sh/) for macOS (or linux).
